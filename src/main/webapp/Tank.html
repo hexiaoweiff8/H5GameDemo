@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="JS/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="JS/Tank.js"></script>
+</head>
+<body>
+
+<img id="tulip" src="Images/body1.png" alt="The Tulip" />
+	<div id="wrap_body">
+		<canvas id="Screen" class="chestCanvas">抱歉，您的浏览器不支持HTML5-canvas，请使用支持HTML5的浏览器。</canvas>
+	</div>
+</body>
+<script type="text/javascript">
+$(function(){
+	$("body").keydown(function(event){
+		console.log(event.key);
+		//G.drawer.drawBlock({x:100, y:100, layerDateList:[{img: document.getElementById("tulip"),offsetX: 10, offsetY: 10, w: 10, h:10, r:0}]});
+	 //$("#msg").html(event.which);
+	});
+	//$("body").hover(function(event){
+	//	console.log(event);
+	//},function(event){
+	//	console.log(event);
+	//});
+	//console.log(G);
+	var img = new Image();
+	// 加载成功
+	img.onload = function() {
+		console.log("ok");
+		//G.context.drawImage(document.getElementById("tulip"), 200, 200, 100, 100);
+		G.drawer.drawBlock({x:100, y:100, layerDateList:[{img: document.getElementById("tulip"),offsetX: 100, offsetY: 100, w: 100, h:100, r:0}]});
+	};
+	img.onerror = function(e) {
+		console.log(e);
+	};
+	img.src = "Images/body1.png";
+	//G.drawer.drawBlock({x:100, y:100, layerDateList:[{img: document.getElementById("tulip"),offsetX: 10, offsetY: 10, w: 100, h:100, r:0}]});
+	//G.context.drawImage(document.getElementById("tulip"), 100, 100, 100, 100);
+}) 
+	
+</script>
+</html>
